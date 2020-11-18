@@ -16,6 +16,8 @@ const contactRouter = require('./app_server/routes/contact');
 
 const app = express();
 
+//require('./app_server/models/db');  ???????????
+
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
 
