@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-let dbURI = 'mongodb://localhost/travlr' // teacher suggestion
+//let dbURI = 'mongodb://localhost/travlr' // teacher suggestion
+const host = process.env.DB_HOST || '127.0.0.1'
+const dbURI = `mongodb://${host}/travlr`;
 const readLine = require('readline');
 
 // Avoid 'current server discovery and Monitoring engine is depreciated' 
