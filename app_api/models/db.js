@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-//let dbURI = 'mongodb://localhost/travlr' // teacher suggestion
 const host = process.env.DB_HOST || '127.0.0.1'
 const dbURI = `mongodb://${host}/travlr`;
 const readLine = require('readline');
