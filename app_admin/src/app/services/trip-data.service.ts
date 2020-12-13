@@ -1,13 +1,19 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Http } from '@angular/http';
-
 import { Trip } from '../models/trip';
+import { User } from '../models/user';
+import { AuthResponse } from '../models/authresponse';
+import { BROWSER_STORAGE } from '../storage';
+
 
 @Injectable()
 export class TripDataService {
 
-  constructor(private http: Http) { }  // recieving http module
-
+  constructor(
+    private http: Http,                                       // recieving http module
+    @Inject(BROWSER_STORAGE) private storage: Storage         // inject browser storage into variable usable within the class
+    ) { }    
+ 
   private apiBaseUrl = 'http://localhost:3000/api/';
   private tripUrl = `${this.apiBaseUrl}trips/`;   // api plus trips
 
@@ -53,8 +59,28 @@ export class TripDataService {
   }
 
   private handleError(error: any): Promise<any> {
-    console.error('Something has gone wrong', error); // for demo purposes only
+    console.error('Something has gone wrong', error);
     return Promise.reject(error.message || error);
+  }
+
+  // login method
+  public login(user: User): Promise<AuthResponse> {
+     return this.makeAuthApiCall('login', user);
+  }
+
+  // register method
+  public register(user: User): Promise<AuthResponse> {
+     return this.makeAuthApiCall('register', user);
+  }
+  
+  // auth api call method
+  private makeAuthApiCall(urlPath: string, user: User): Promise<AuthResponse> {
+    const url: string = `${this.apiBaseUrl}/${urlPath}`;
+    return this.http
+      .post(url, user)                                    // make post to url with user class
+      .toPromise()
+      .then(response => response.json() as AuthResponse)  // response comes back mapped in as auth response
+      .catch(this.handleError);
   }
 
 }
