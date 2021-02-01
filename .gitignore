@@ -33,6 +33,7 @@ bower_components
 build/Release
 
 # Dependency directories
+node_modules
 node_modules/
 jspm_packages/
 
@@ -55,7 +56,9 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
+# 'dont be the shmuck who gave away the keys to the kingdom!!' >_<
 .env
+.env.test
 
 # next.js build output
 .next
