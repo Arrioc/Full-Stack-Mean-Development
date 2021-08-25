@@ -1,5 +1,5 @@
 # CS 465 Full Stack Development
-This project features a full Stack Development project, created in my CS 465 course, which uses a MEAN stack (MongoDB, Express, Angular, Node.js). I recently updated the project, and am working out one little kink in it. Then I push it here.
+This project features a full Stack Development project, created in my CS 465 course, which uses a MEAN stack (MongoDB, Express, Angular, Node.js). I recently updated the project, and am working out one little kink in it. Then I'll push/publish it here.
 
 ## Architecture: Frontend 
 For Express HTML, when I changed the static HTML into JSON templates for the client’s front-end I used handlebars as my template engine and wrote the code in JavaScript. Whereas in the single-page application (SPA), I converted code using an Angular template engine which was written in TypeScript, but I still used HTML files for rendering with Angular. Some differences I noted here was how I adopted my styles such as cascading style sheets (CSS files), and the headers, footers, and page views from the Express application I created.
