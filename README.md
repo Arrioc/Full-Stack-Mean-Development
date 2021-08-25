@@ -1,4 +1,4 @@
-# cs465-fullstack Project
+# CS 465 Full Stack Development
 This project features full Stack Development with a MEAN stack (MongoDB, Express, Angular, Node.js). I recently updated the project but this leaves some kinks I am currently working out.
 
 ## Architecture: Frontend 
