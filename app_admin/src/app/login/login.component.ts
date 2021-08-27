@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
   // on submit function
   public onLoginSubmit(): void {
     this.formError = '';
-    if (!this.credentials.email || !this.credentials.password) {    // makes sure email and pw arae filled in
+    if (!this.credentials.email || !this.credentials.password) {    // makes sure email and pw are filled in
       this.formError = 'All fields are required, please try again';
     } else {
       this.doLogin();                                               // then call 'do login'
